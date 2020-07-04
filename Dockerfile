@@ -1,7 +1,8 @@
 FROM gradle:6.5.1-jdk8 as builder
+
 COPY . .
 
-RUN gradlew assembleRelease
+RUN gradle assembleRelease
 
 FROM ahmedrshdy/firebase-cli
 
