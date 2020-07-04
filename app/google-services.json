@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "410873117405",
+    "firebase_url": "https://home-ce6da.firebaseio.com",
+    "project_id": "home-ce6da",
+    "storage_bucket": "home-ce6da.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:410873117405:android:202b40afaf20b40281b934",
+        "android_client_info": {
+          "package_name": "tiny.angry.kitten.homeapplication"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "410873117405-m84mi68ed260l4p1le0gu669fbc891ir.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDyp9qnYLclEW-iol94v_NEm8Na-WCVC4I"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "410873117405-m84mi68ed260l4p1le0gu669fbc891ir.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
