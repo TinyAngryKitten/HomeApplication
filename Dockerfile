@@ -29,9 +29,9 @@ COPY . .
 
 RUN gradle -PdisablePreDex build
 
-FROM ahmedrshdy/firebase-cli
-
 COPY --from=builder app/build/outputs/apk/release/app-release-unsigned.apk .
+
+FROM ahmedrshdy/firebase-cli
 
 # Code file to execute when the docker container starts up (`entrypoint.sh`)
 ENTRYPOINT ["sh action.sh"]
