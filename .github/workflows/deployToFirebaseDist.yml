@@ -21,8 +21,16 @@ jobs:
     steps:
     # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
     - uses: actions/checkout@v2
-    - uses: ./
+    - name: Run Gradle build
+      uses: Raul6469/android-gradle-action@2.0.0
       with:
-        cli-token: ${{ secrets.FIREBASE_CLI_TOKEN }}
-        app-id: ${{secrets.APP_ID}}
-        groups: "users"
+        # The gradle command you wish to run (required)
+        # Here, `./gradlew test` will be run
+        script: assembleRelease
+    - name: upload artifact to Firebase App Distribution
+      uses: wzieba/Firebase-Distribution-Github-Action@v1
+      with:
+        appId: ${{secrets.APP_ID}}
+        token: ${{secrets.FIREBASE_CLI_TOKEN}}
+        groups: users
+        file: app/build/outputs/apk/release/app-release-unsigned.apk
