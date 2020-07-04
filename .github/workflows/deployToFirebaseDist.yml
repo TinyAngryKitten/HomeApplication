@@ -23,6 +23,6 @@ jobs:
     - uses: actions/checkout@v2
     - uses: ./
       with:
-        - cli-token: ${{ secrets.FIREBASE_CLI_TOKEN }}
-        - app: ${{secrets.APP_ID}}
-        - groups: "users"
+        cli-token: ${{ secrets.FIREBASE_CLI_TOKEN }}
+        app: ${{secrets.APP_ID}}
+        groups: "users"
