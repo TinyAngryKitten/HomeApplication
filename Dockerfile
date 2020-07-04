@@ -27,7 +27,7 @@ RUN apt-get update && apt-get install build-essential -y && apt-get install file
 
 COPY . .
 
-RUN gradle build -PdisablePreDex lint
+RUN gradle -PdisablePreDex build
 
 FROM ahmedrshdy/firebase-cli
 
