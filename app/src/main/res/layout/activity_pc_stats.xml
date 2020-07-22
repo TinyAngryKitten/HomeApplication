@@ -1,0 +1,175 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/vramText3"
+        android:layout_width="102dp"
+        android:layout_height="17dp"
+        android:text="0 / 0"
+        android:textAlignment="center"
+        app:layout_constraintBottom_toTopOf="@+id/ramBar"
+        app:layout_constraintEnd_toEndOf="@+id/ramBar"
+        app:layout_constraintStart_toStartOf="@+id/ramBar" />
+
+    <ProgressBar
+        android:id="@+id/ramBar"
+        style="?android:attr/progressBarStyleHorizontal"
+        android:layout_width="103dp"
+        android:layout_height="15dp"
+        android:layout_marginEnd="40dp"
+        android:layout_marginBottom="2dp"
+        app:layout_constraintBottom_toTopOf="@+id/gpuchart"
+        app:layout_constraintEnd_toEndOf="@+id/cpuchart" />
+
+    <Button
+        android:id="@+id/screenButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="140dp"
+        android:layout_marginBottom="8dp"
+        android:text="Button"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/button5"
+        tools:text="Keep screen on" />
+
+    <Button
+        android:id="@+id/button2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:text="Button"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/screenButton"
+        app:layout_constraintHorizontal_bias="0.537"
+        app:layout_constraintStart_toEndOf="@+id/Button34" />
+
+    <Button
+        android:id="@+id/pcNavButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="10dp"
+        android:text="PC"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/Button34"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/Button34"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="10dp"
+        android:text="Button"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/button2"
+        app:layout_constraintStart_toEndOf="@+id/pcNavButton" />
+
+    <TextView
+        android:id="@+id/cpuLoadText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="30dp"
+        android:layout_marginEnd="221dp"
+        android:text="CPU load: 0"
+        android:textColor="#0000FF"
+        app:layout_constraintEnd_toStartOf="@+id/gpuLoadText"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/gpuLoadText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="28dp"
+        android:layout_marginEnd="3dp"
+        android:text="GPU load: 0"
+        android:textColor="#0000FF"
+        app:layout_constraintEnd_toStartOf="@+id/gpuTempText"
+        app:layout_constraintStart_toStartOf="@+id/gpuchart"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/cpuTempText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="60dp"
+        android:layout_marginTop="30dp"
+        android:text="CPU temp: 0"
+        android:textColor="#FF0000"
+        app:layout_constraintStart_toEndOf="@+id/cpuLoadText"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/gpuTempText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="38dp"
+        android:layout_marginTop="30dp"
+        android:layout_marginEnd="287dp"
+        android:text="GPU temp: 0"
+        android:textColor="#FF0000"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/gpuLoadText"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <com.github.mikephil.charting.charts.LineChart
+        android:id="@+id/cpuchart"
+        android:layout_width="0dp"
+        android:layout_height="200dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="10dp"
+        app:layout_constraintEnd_toStartOf="@+id/gpuchart"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/cpuLoadText" />
+
+    <com.github.mikephil.charting.charts.LineChart
+        android:id="@+id/gpuchart"
+        android:layout_width="0dp"
+        android:layout_height="200dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="10dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/cpuchart"
+        app:layout_constraintTop_toBottomOf="@+id/gpuTempText">
+
+    </com.github.mikephil.charting.charts.LineChart>
+
+    <ProgressBar
+        android:id="@+id/vramBar"
+        style="?android:attr/progressBarStyleHorizontal"
+        android:layout_width="103dp"
+        android:layout_height="15dp"
+        android:layout_marginEnd="50dp"
+        android:layout_marginBottom="2dp"
+        android:indeterminate="false"
+        app:layout_constraintBottom_toTopOf="@+id/gpuchart"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <tiny.angry.kitten.homeapplication.widgets.MediaButtons
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/cpuchart" />
+
+    <TextView
+        android:id="@+id/vramText"
+        android:layout_width="102dp"
+        android:layout_height="17dp"
+        android:text="0 / 0"
+        android:textAlignment="center"
+        app:layout_constraintBottom_toTopOf="@+id/vramBar"
+        app:layout_constraintEnd_toEndOf="@+id/vramBar"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="@+id/vramBar" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
