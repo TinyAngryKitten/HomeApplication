@@ -15,6 +15,7 @@ import tiny.angry.kitten.homeapplication.events.AppScreenEventHandler
 import tiny.angry.kitten.homeapplication.events.LeagueEventHandler
 import tiny.angry.kitten.homeapplication.events.MqttEventHandler
 import tiny.angry.kitten.homeapplication.events.PCStatEventHandler
+import tiny.angry.kitten.homeapplication.invocation.lights.LightController
 import tiny.angry.kitten.homeapplication.invocation.media.MediaFunction
 import tiny.angry.kitten.homeapplication.invocation.media.MediaFunctionInvocation
 import tiny.angry.kitten.homeapplication.viewmodels.PCStatsViewModel
@@ -45,6 +46,7 @@ val mqttModule = module {
     single(named("port")) {1883}
 
     single { PCStatsViewModel() }
+    single { LightController() }
 
     single(named("setScreenOn")) {
         ScreenSingleton

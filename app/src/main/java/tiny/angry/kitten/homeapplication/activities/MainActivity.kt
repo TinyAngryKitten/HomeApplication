@@ -54,10 +54,6 @@ class MainActivity : AppCompatActivity(), KoinComponent {
             if(turnOn) window.addFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON)
             else window.clearFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON)
         }
-            pcNavButton.setOnClickListener {
-                //navigate to pc view
-            }
-
             prepareChart(cpuchart, "Temperature", "Load")
             prepareChart(gpuchart, "Temperature", "Load")
 

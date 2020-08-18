@@ -17,6 +17,7 @@
             </intent-filter>
         </activity>
         <activity android:name=".activities.PCStatsActivity" />
+        <activity android:name=".activities.LightsActivity" />
     </application>
 
 </manifest>
