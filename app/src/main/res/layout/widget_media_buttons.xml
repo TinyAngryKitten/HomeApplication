@@ -1,42 +1,65 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
     android:orientation="horizontal">
 
-    <Button
+    <ImageButton
         android:id="@+id/previousButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="prev"
-        android:textSize="25sp" />
+        android:layout_weight="1"
+        android:background="#00FFFFFF"
+        android:scaleType="centerInside"
+        app:srcCompat="@mipmap/last_icon_foreground" />
 
-    <Button
+    <ImageButton
         android:id="@+id/nextButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="next"
-        android:textSize="25sp" />
+        android:layout_weight="1"
+        android:background="#00FFFFFF"
+        android:scaleType="centerInside"
+        app:srcCompat="@mipmap/next_icon_foreground" />
 
-    <Button
+    <TextView
+        android:id="@+id/spacer1"
+        android:layout_width="50px"
+        android:layout_height="wrap_content"
+        android:layout_weight="1" />
+
+    <ImageButton
         android:id="@+id/voldDownButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="-"
-        android:textSize="25sp" />
+        android:layout_weight="1"
+        android:background="#00FFFFFF"
+        android:scaleType="centerInside"
+        app:srcCompat="@mipmap/volume_down_icon_foreground" />
 
-    <Button
+    <ImageButton
         android:id="@+id/volUpButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="+"
-        android:textSize="25sp" />
+        android:layout_weight="1"
+        android:background="#00FFFFFF"
+        android:scaleType="centerInside"
+        app:srcCompat="@mipmap/volume_up_icon_foreground" />
 
-    <Button
+    <TextView
+        android:id="@+id/spacer2"
+        android:layout_width="50px"
+        android:layout_height="wrap_content"
+        android:layout_weight="1" />
+
+    <ImageButton
         android:id="@+id/togglePlayButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_weight="1"
-        android:text="Play"
-        android:textSize="25sp" />
+        android:background="#00FFFFFF"
+        android:scaleType="centerInside"
+        app:srcCompat="@mipmap/play_icon_foreground" />
+
 </LinearLayout>
