@@ -33,8 +33,6 @@ class MainActivity : AppCompatActivity(), KoinComponent {
 
     private val screenManager : ScreenSingleton by inject(named("setScreenOn"))
 
-    private val invokeMediaFunction : (MediaFunction) -> Unit by inject()
-
     val maxDatasetSize = 100
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -141,9 +139,13 @@ class MainActivity : AppCompatActivity(), KoinComponent {
         chart.setTouchEnabled(false)
         chart.setDrawGridBackground(false)
 
+        chart.xAxis.setDrawGridLines(false)
         chart.xAxis.isEnabled = false
         //disable right axis
         chart.axisRight.isEnabled = false
+        chart.axisRight.setDrawGridLines(false)
+        chart.axisLeft.setDrawGridLines(false)
+
 
         chart.axisLeft.apply {
             granularity = 1f
