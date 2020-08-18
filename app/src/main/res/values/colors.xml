@@ -1,6 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorPrimary">#008577</color>
-    <color name="colorPrimaryDark">#00574B</color>
-    <color name="colorAccent">#D81B60</color>
+    <color name="colorPrimary">#242E42</color>
+    <color name="colorPrimaryDark">#494F5D</color><!-- Lighter color -->
+    <color name="colorAccent">#88D840</color>
 </resources>
+<!--
+final backgroundColor = Color.fromRGBO(36,46,66,1,);
+final lightBackgroundColor = Color.fromRGBO(73,79,93, 1);
+final primaryGreen = Color.fromRGBO(136,216,64,1);
+-->
