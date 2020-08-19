@@ -2,5 +2,7 @@
 <resources>
     <declare-styleable name="MediaButtons">
     </declare-styleable>
+    <declare-styleable name="NavigationBar">
+    </declare-styleable>
 
 </resources>
