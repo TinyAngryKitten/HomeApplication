@@ -9,8 +9,6 @@ import android.widget.Button
 import android.widget.LinearLayout
 import androidx.core.content.ContextCompat.startActivity
 import tiny.angry.kitten.homeapplication.R
-import tiny.angry.kitten.homeapplication.activities.LightsActivity
-import tiny.angry.kitten.homeapplication.activities.MainActivity
 
 @ExperimentalStdlibApi
 class NavigationBar(
@@ -18,19 +16,18 @@ class NavigationBar(
     attribs : AttributeSet
 ) : LinearLayout(context, attribs) {
 
+    val pcStatsButton = buildButton("PC")
+    val lightsButton = buildButton("Lights")
+
     init {
         View.inflate(context, R.layout.widget_navigation_bar, this)
 
-        addView(buildButton("PC", MainActivity::class.java))
-        addView(buildButton("Lights", LightsActivity::class.java))
+        addView(pcStatsButton)
+        addView(lightsButton)
     }
 
-    private fun <T: Activity> buildButton(buttonText: String, destination: Class<T>) =
+    private fun buildButton(buttonText: String) =
         Button(context).apply {
             text = buttonText
-            setOnClickListener {
-                val intent = Intent(context, destination)
-                startActivity(context,intent,null)
-            }
         }
 }

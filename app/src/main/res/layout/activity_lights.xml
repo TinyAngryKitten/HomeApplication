@@ -1,25 +1,118 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <com.lukelorusso.verticalseekbar.VerticalSeekBar
-        android:id="@+id/homeLights"
-        android:layout_width="100dp"
-        android:layout_height="250dp"
-        app:vsb_bar_background="#eeeeee"
-        app:vsb_bar_corner_radius="15dp"
-        app:vsb_bar_progress_gradient_end="#4dd0e1"
-        app:vsb_bar_progress_gradient_start="#03a2ba"
-        app:vsb_bar_width="60dp"
-        app:vsb_click_to_set_progress="false"
-        app:vsb_max_placeholder_position="inside"
-        app:vsb_min_placeholder_position="inside"
-        app:vsb_progress="50"
-        app:vsb_show_thumb="true"
-        app:vsb_thumb_container_corner_radius="5dp"
-        app:vsb_use_thumb_to_set_progress="true" />
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
 
+        <!-- <tiny.angry.kitten.homeapplication.widgets.LightSwitch
+            android:id="@+id/livingroomSwitch"
+            android:layout_width="150dp"
+            android:layout_height="250dp"
+            android:layout_marginStart="92dp"
+            android:layout_marginBottom="108dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/bedroomSwitch" />
+
+        <tiny.angry.kitten.homeapplication.widgets.LightSwitch
+            android:id="@+id/bedroomSwitch"
+            android:layout_width="150dp"
+            android:layout_height="250dp"
+            android:layout_marginStart="32dp"
+            android:layout_marginBottom="108dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+-->
+        <tiny.angry.kitten.homeapplication.widgets.ActionGrid
+            android:id="@+id/actionGrid"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginEnd="20dp"
+            android:layout_marginBottom="60dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/livingroom"
+            app:layout_constraintTop_toBottomOf="@+id/airquality" />
+
+        <tiny.angry.kitten.homeapplication.widgets.NavigationBar
+            android:id="@+id/navBar"
+            android:layout_width="170dp"
+            android:layout_height="50dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <tiny.angry.kitten.homeapplication.widgets.LightSwitch
+            android:id="@+id/hallway"
+            android:layout_width="100dp"
+            android:layout_height="200dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginBottom="60dp"
+            app:icon="@mipmap/light_off_icon_foreground"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:lightGroup="Living Room"
+            app:name="Living room" />
+
+        <tiny.angry.kitten.homeapplication.widgets.LightSwitch
+            android:id="@+id/livingroom"
+            android:layout_width="100dp"
+            android:layout_height="200dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginBottom="60dp"
+            app:icon="@mipmap/light_off_icon_foreground"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/hallway"
+            app:lightGroup="Living Room"
+            app:name="Living room" />
+
+        <tiny.angry.kitten.homeapplication.widgets.LightSwitch
+            android:id="@+id/kitchen"
+            android:layout_width="100dp"
+            android:layout_height="200dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="30dp"
+            android:layout_marginBottom="30dp"
+            app:icon="@mipmap/light_off_icon_foreground"
+            app:layout_constraintBottom_toTopOf="@+id/hallway"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:lightGroup="Living Room"
+            app:name="Living room" />
+
+        <tiny.angry.kitten.homeapplication.widgets.LightSwitch
+            android:id="@+id/bathroom"
+            android:layout_width="100dp"
+            android:layout_height="200dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="30dp"
+            android:layout_marginBottom="30dp"
+            app:icon="@mipmap/light_off_icon_foreground"
+            app:layout_constraintBottom_toTopOf="@+id/hallway"
+            app:layout_constraintStart_toEndOf="@+id/kitchen"
+            app:layout_constraintTop_toTopOf="parent"
+            app:lightGroup="Living Room"
+            app:name="Living room" />
+
+        <tiny.angry.kitten.homeapplication.widgets.AirQualityDisplay
+            android:id="@+id/airquality"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="20dp"
+            app:icon="@mipmap/light_off_icon_foreground"
+            app:layout_constraintBottom_toTopOf="@+id/actionGrid"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/bathroom"
+            app:layout_constraintTop_toTopOf="parent"
+            app:lightGroup="Living Room"
+            app:name="Living room" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
 </LinearLayout>

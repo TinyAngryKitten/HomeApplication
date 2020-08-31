@@ -1,5 +1,8 @@
 package tiny.angry.kitten.homeapplication.events
 
+import android.app.Service
+import android.content.Intent
+import android.os.IBinder
 import android.util.Log
 import io.vertx.mqtt.MqttClient
 import io.vertx.mqtt.messages.MqttPublishMessage
@@ -10,7 +13,7 @@ import org.koin.core.KoinComponent
 import org.koin.core.inject
 import org.koin.core.qualifier.named
 
-class MqttThread : KoinComponent{
+class MqttThread : Service(), KoinComponent{
     val client : MqttClient by inject()
     val host : String by inject(named("host"))
     val port : Int by inject(named("port"))
@@ -52,4 +55,10 @@ class MqttThread : KoinComponent{
             )
         }
     }
+
+    override fun onStartCommand(intent: Intent?, flags: Int, startId: Int): Int {
+        connect()
+        return START_NOT_STICKY
+    }
+    override fun onBind(intent: Intent?): IBinder? = null
 }

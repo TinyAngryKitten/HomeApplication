@@ -8,7 +8,7 @@ import org.koin.core.inject
 
 class LightController : KoinComponent {
     val client : MqttClient by inject()
-    val topic = "light/group/"
+    val topic = "light/group"
     val qos = MqttQoS.AT_LEAST_ONCE
 
     fun adjustBrightnessOfGroup(group: String, brightness : Int) =
@@ -20,5 +20,12 @@ class LightController : KoinComponent {
             false
         )
 
-
+    fun updateLocalStateOfGroup(group: String) =
+        client.publish(
+            "$topic/$group/update",
+            Buffer.buffer(""),
+            MqttQoS.AT_MOST_ONCE,
+            false,
+            false
+        )
 }

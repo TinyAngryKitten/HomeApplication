@@ -1,25 +1,21 @@
 package tiny.angry.kitten.homeapplication.modules
 
-import android.os.Handler
-import android.os.Looper
-import arrow.core.Option
 import com.fasterxml.jackson.databind.ObjectMapper
 import com.fasterxml.jackson.module.kotlin.KotlinModule
-import io.netty.handler.codec.mqtt.MqttPublishMessage
 import io.vertx.core.Vertx
 import io.vertx.core.VertxOptions
 import io.vertx.mqtt.MqttClient
+import org.koin.android.ext.koin.androidContext
 import org.koin.core.qualifier.named
 import org.koin.dsl.module
-import tiny.angry.kitten.homeapplication.events.AppScreenEventHandler
-import tiny.angry.kitten.homeapplication.events.LeagueEventHandler
-import tiny.angry.kitten.homeapplication.events.MqttEventHandler
-import tiny.angry.kitten.homeapplication.events.PCStatEventHandler
+import tiny.angry.kitten.homeapplication.events.*
 import tiny.angry.kitten.homeapplication.invocation.lights.LightController
 import tiny.angry.kitten.homeapplication.invocation.media.MediaFunction
 import tiny.angry.kitten.homeapplication.invocation.media.MediaFunctionInvocation
+import tiny.angry.kitten.homeapplication.viewmodels.AirqualityViewModel
+import tiny.angry.kitten.homeapplication.viewmodels.LightStateViewModel
 import tiny.angry.kitten.homeapplication.viewmodels.PCStatsViewModel
-import java.util.*
+import tiny.angry.kitten.homeapplication.viewmodels.ScreenStateViewModel
 import java.util.Collections.synchronizedList
 
 val mqttModule = module {
@@ -32,7 +28,8 @@ val mqttModule = module {
         synchronizedList<MqttEventHandler>(listOf(
             PCStatEventHandler(),
             AppScreenEventHandler(),
-            LeagueEventHandler()
+            LeagueEventHandler(),
+            LightStateEventHandler()
         ))
     }
 
@@ -48,20 +45,11 @@ val mqttModule = module {
     single { PCStatsViewModel() }
     single { LightController() }
 
-    single(named("setScreenOn")) {
-        ScreenSingleton
-    }
-
     single(named("invokeMediaFunction")) {MediaFunctionInvocation() as (MediaFunction) -> Unit}
-}
 
-object ScreenSingleton {
-    private var setScreenOnMethod : (Boolean) -> Unit = {}
-    fun changeScreenOnMethod(fn : (Boolean) -> Unit) {
-        setScreenOnMethod = fn
-    }
+    single { ScreenStateViewModel(androidContext()) }
+    single { LightStateViewModel() }
+    single { AirqualityViewModel() }
 
-    fun setScrenOn(on : Boolean) = Handler(Looper.getMainLooper()).post {
-        setScreenOnMethod(on)
-    }
+    single(named("placement")) {"livingroom"}
 }

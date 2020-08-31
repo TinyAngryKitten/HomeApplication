@@ -4,5 +4,10 @@
     </declare-styleable>
     <declare-styleable name="NavigationBar">
     </declare-styleable>
+    <declare-styleable name="LightSwitch">
+        <attr name="lightGroup" format="string"/>
+        <attr name="name" format="string"/>
+        <attr name="icon" format="reference"/>
+    </declare-styleable>
 
 </resources>
