@@ -35,8 +35,5 @@ allprojects {
     }
 }
 
-task clean(type: Delete) {
-    delete rootProject.buildDir
-}
-
 apply plugin: "com.apollographql.apollo"
+apply plugin: "java"//for the apollo plugin i think
