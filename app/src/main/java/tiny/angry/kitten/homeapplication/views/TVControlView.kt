@@ -27,7 +27,7 @@ class TvControlView(context: Context) : LinearLayout(context) {
             harmonyController.invokeAction(HarmonyHubDevices.TV,HarmonyHubActions.PowerToggle)
         }
         appleTvPower.setOnClickListener {
-            harmonyController.invokeAction(HarmonyHubDevices.APPLE_TV,HarmonyHubActions.PowerOn)
+            harmonyController.invokeAction(HarmonyHubDevices.APPLE_TV,HarmonyHubActions.Menu)
         }
 
         upButton.setOnClickListener{
