@@ -17,6 +17,6 @@ class ActionButton(
         setOnClickListener(config.action)
         if(config.icon != null) setImageResource(config.icon)
         setBackgroundColor(Color.TRANSPARENT)
-        setBackgroundDrawable(null)
+        //setBackgroundDrawable(null)
     }
 }

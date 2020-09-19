@@ -1,4 +1,4 @@
-package tiny.angry.kitten.homeapplication.activities
+package tiny.angry.kitten.homeapplication.views
 
 import android.graphics.Color
 import android.os.Bundle

@@ -1,18 +1,15 @@
-package tiny.angry.kitten.homeapplication.activities
+package tiny.angry.kitten.homeapplication.views
 
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import androidx.navigation.findNavController
 import androidx.navigation.fragment.navArgs
 import kotlinx.android.synthetic.main.activity_lights.*
 import org.koin.core.KoinComponent
-import org.koin.core.inject
 import tiny.angry.kitten.homeapplication.R
-import tiny.angry.kitten.homeapplication.invocation.lights.LightController
 
 class LightsActivity : Fragment(), KoinComponent {
     val args : LightsActivityArgs by navArgs()
@@ -32,6 +29,8 @@ class LightsActivity : Fragment(), KoinComponent {
         navBar.pcStatsButton.setOnClickListener {
             it.findNavController().navigate(LightsActivityDirections.actionLightsActivityToPCStatsActivity())
         }
-
+        navBar.lightsButton.setOnClickListener {
+            TVControlSialog().show(fragmentManager!!, "TVControls")
+        }
     }
 }

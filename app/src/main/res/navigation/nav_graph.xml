@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto" android:id="@+id/nav_graph"
-    app:startDestination="@id/PCStatsActivity">
+    app:startDestination="@id/lightsActivity">
 
     <fragment
         android:id="@+id/PCStatsActivity"
-        android:name="tiny.angry.kitten.homeapplication.activities.PCStatsActivity"
+        android:name="tiny.angry.kitten.homeapplication.views.PCStatsActivity"
         android:label="PCStatsActivity" >
         <action
             android:id="@+id/action_PCStatsActivity_to_lightsActivity"
@@ -18,7 +18,7 @@
     </fragment>
     <fragment
         android:id="@+id/lightsActivity"
-        android:name="tiny.angry.kitten.homeapplication.activities.LightsActivity"
+        android:name="tiny.angry.kitten.homeapplication.views.LightsActivity"
         android:label="LightsActivity" >
         <action
             android:id="@+id/action_lightsActivity_to_PCStatsActivity"
@@ -27,5 +27,12 @@
             android:name="importantNumber"
             app:argType="integer"
             android:defaultValue="666" />
+        <action
+            android:id="@+id/action_lightsActivity_to_TVControlSialog"
+            app:destination="@id/TVControlSialog" />
     </fragment>
+    <fragment
+        android:id="@+id/TVControlSialog"
+        android:name="tiny.angry.kitten.homeapplication.views.TVControlSialog"
+        android:label="TVControlSialog" />
 </navigation>

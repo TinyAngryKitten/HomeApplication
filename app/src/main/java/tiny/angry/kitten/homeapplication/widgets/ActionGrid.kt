@@ -14,7 +14,8 @@ class ActionGrid(context : Context, attr : AttributeSet): GridLayout(context,att
 
     val actions : List<ActionConfig> = listOf(
         ActionConfigs.fromResourceName("home"),
-        ActionConfigs.fromResourceName("leaving")
+        ActionConfigs.fromResourceName("leaving"),
+        ActionConfigs.fromResourceName("fans")
     )
 
     init {

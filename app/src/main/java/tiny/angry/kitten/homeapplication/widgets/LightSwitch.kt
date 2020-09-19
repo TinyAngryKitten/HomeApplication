@@ -47,7 +47,13 @@ class LightSwitch(context: Context, attributes : AttributeSet) : LinearLayout(co
             viewmodel.lightState.observe({lifecycleOwner.lifecycle}) {
                 stateMap : Map<String, LightState> ->
                 val newBrightness = stateMap[config.lightGroup]?.brightness
-                if(newBrightness != null) switch1.progress = newBrightness
+                if(newBrightness != null) {
+                    val previousBrightness = switch1.progress
+                    switch1.progress = newBrightness
+
+                    if(previousBrightness == 0 && newBrightness > 0) imageView.setImageResource(R.mipmap.light_on_icon_foreground)
+                    else if(previousBrightness > 0 && newBrightness == 0) imageView.setImageResource(R.mipmap.light_off_icon_foreground)
+                }
             }
         }
     }

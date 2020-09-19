@@ -1,15 +1,10 @@
-package tiny.angry.kitten.homeapplication.activities
+package tiny.angry.kitten.homeapplication.views
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
-import android.view.WindowManager
-import org.koin.android.ext.koin.androidContext
 import org.koin.core.KoinComponent
-import org.koin.core.context.startKoin
 import tiny.angry.kitten.homeapplication.R
-import tiny.angry.kitten.homeapplication.events.MqttThread
-import tiny.angry.kitten.homeapplication.modules.mqttModule
 
 class MainActivity : AppCompatActivity(), KoinComponent {
 

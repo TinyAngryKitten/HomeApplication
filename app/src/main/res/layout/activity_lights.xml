@@ -4,30 +4,13 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:orientation="vertical"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    >
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-        <!-- <tiny.angry.kitten.homeapplication.widgets.LightSwitch
-            android:id="@+id/livingroomSwitch"
-            android:layout_width="150dp"
-            android:layout_height="250dp"
-            android:layout_marginStart="92dp"
-            android:layout_marginBottom="108dp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintStart_toEndOf="@+id/bedroomSwitch" />
-
-        <tiny.angry.kitten.homeapplication.widgets.LightSwitch
-            android:id="@+id/bedroomSwitch"
-            android:layout_width="150dp"
-            android:layout_height="250dp"
-            android:layout_marginStart="32dp"
-            android:layout_marginBottom="108dp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintStart_toStartOf="parent" />
--->
         <tiny.angry.kitten.homeapplication.widgets.ActionGrid
             android:id="@+id/actionGrid"
             android:layout_width="0dp"
