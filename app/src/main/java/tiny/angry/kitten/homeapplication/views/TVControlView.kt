@@ -85,7 +85,7 @@ class TvControlView(context: Context) : LinearLayout(context), KoinComponent {
     }
 }
 
-class TVControlSialog : DialogFragment() {
+class TVControlDialog : DialogFragment() {
     val harmonyController = HarmonyInvoker()
     override fun onCreateDialog(savedInstanceState: Bundle?): Dialog {
         return activity?.let {

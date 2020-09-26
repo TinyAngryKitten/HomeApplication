@@ -8,6 +8,7 @@ import androidx.fragment.app.Fragment
 import androidx.navigation.findNavController
 import androidx.navigation.fragment.navArgs
 import kotlinx.android.synthetic.main.activity_lights.*
+import kotlinx.android.synthetic.main.activity_pc_stats.*
 import org.koin.core.KoinComponent
 import tiny.angry.kitten.homeapplication.R
 
@@ -30,7 +31,10 @@ class LightsActivity : Fragment(), KoinComponent {
             it.findNavController().navigate(LightsActivityDirections.actionLightsActivityToPCStatsActivity())
         }
         navBar.lightsButton.setOnClickListener {
-            TVControlSialog().show(fragmentManager!!, "TVControls")
+            TVControlDialog().show(fragmentManager!!, "TVControls")
+        }
+        navBar.fancontrolButton.setOnClickListener {
+            FanControlDialog().show(fragmentManager!!, "Fancontrol")
         }
     }
 }

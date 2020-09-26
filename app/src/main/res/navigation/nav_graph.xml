@@ -33,6 +33,6 @@
     </fragment>
     <fragment
         android:id="@+id/TVControlSialog"
-        android:name="tiny.angry.kitten.homeapplication.views.TVControlSialog"
+        android:name="tiny.angry.kitten.homeapplication.views.TVControlDialog"
         android:label="TVControlSialog" />
 </navigation>

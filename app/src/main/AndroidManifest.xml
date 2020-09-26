@@ -5,6 +5,7 @@
 
     <uses-permission android:name="android.permission.VIBRATE" />
     <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <uses-permission android:name="android.permission.BLUETOOTH" />
 
     <application
         android:allowBackup="true"
@@ -13,10 +14,6 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity
-            android:name=".TVControlActivity"
-            android:label="@string/title_activity_tvcontrol"
-            android:theme="@style/AppTheme.NoActionBar"></activity>
 
         <provider
             android:name="androidx.startup.InitializationProvider"
@@ -33,7 +30,12 @@
                 android:value="androidx.startup" />
         </provider>
 
-        <activity android:name=".views.MainActivity">
+        <activity
+            android:name=".views.MainActivity"
+            android:screenOrientation="landscape"
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            >
+
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -45,5 +47,4 @@
 
         <service android:name=".events.MqttThread" />
     </application>
-
 </manifest>

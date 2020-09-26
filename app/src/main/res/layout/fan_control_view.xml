@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content">
+
+    <ImageButton
+        android:id="@+id/fanPowerButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="20dp"
+        android:background="@android:color/transparent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@mipmap/power_icon_foreground" />
+
+    <ImageButton
+        android:id="@+id/fanspeedButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:background="@android:color/transparent"
+        app:layout_constraintStart_toStartOf="@+id/fanPowerButton"
+        app:layout_constraintTop_toBottomOf="@+id/fanPowerButton"
+        app:srcCompat="@mipmap/fan_speed_icon_foreground" />
+
+    <ImageButton
+        android:id="@+id/fanmodeButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:background="@android:color/transparent"
+        app:layout_constraintStart_toEndOf="@+id/fanPowerButton"
+        app:layout_constraintTop_toTopOf="@+id/fanPowerButton"
+        app:srcCompat="@mipmap/lightning_icon_foreground" />
+
+    <ImageButton
+        android:id="@+id/fanrotationButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginBottom="20dp"
+        android:background="@android:color/transparent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/fanspeedButton"
+        app:layout_constraintTop_toBottomOf="@+id/fanPowerButton"
+        app:srcCompat="@mipmap/rotate_icon_foreground" />
+</androidx.constraintlayout.widget.ConstraintLayout>
