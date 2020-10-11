@@ -8,11 +8,6 @@ import android.view.View
 import android.widget.Button
 import android.widget.LinearLayout
 import android.widget.TextView
-import androidx.core.view.marginBottom
-import androidx.core.view.marginStart
-import androidx.core.view.marginTop
-import androidx.core.view.updateLayoutParams
-import com.google.android.material.animation.DrawableAlphaProperty
 import tiny.angry.kitten.homeapplication.R
 
 @ExperimentalStdlibApi
