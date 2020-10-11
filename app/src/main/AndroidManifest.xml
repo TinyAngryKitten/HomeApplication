@@ -28,6 +28,9 @@
             <meta-data
                 android:name="tiny.angry.kitten.homeapplication.initializers.KoinInitializer"
                 android:value="androidx.startup" />
+            <meta-data
+                android:name="tiny.angry.kitten.homeapplication.initializers.FierbaseInitializer"
+                android:value="androidx.startup" />
         </provider>
 
         <activity

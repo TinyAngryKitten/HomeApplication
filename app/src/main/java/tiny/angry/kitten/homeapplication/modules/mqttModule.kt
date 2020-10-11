@@ -11,6 +11,7 @@ import com.google.firebase.crashlytics.FirebaseCrashlytics
 import io.vertx.core.Vertx
 import io.vertx.core.VertxOptions
 import io.vertx.mqtt.MqttClient
+import kotlinx.coroutines.flow.MutableStateFlow
 import org.koin.android.ext.koin.androidContext
 import org.koin.core.qualifier.named
 import org.koin.dsl.module
@@ -58,6 +59,8 @@ val mqttModule = module {
     single { AirqualityViewModel() }
 
     single(named("placement")) { "livingroom" }
+
+    single(named("connectionState")) { MutableStateFlow(false)}
 
     single { FirebaseCrashlytics.getInstance() }
 }

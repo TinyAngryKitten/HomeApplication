@@ -13,6 +13,7 @@ class FierbaseInitializer : Initializer<Unit>, KoinComponent {
 
     override fun create(context: Context) {
         crashlytics.setCustomKey("placement", placement)
+        crashlytics.setUserId(placement)
     }
 
     override fun dependencies(): MutableList<Class<out Initializer<*>>> = mutableListOf(KoinInitializer::class.java)

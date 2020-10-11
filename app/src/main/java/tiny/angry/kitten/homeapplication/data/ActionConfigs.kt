@@ -1,5 +1,6 @@
 package tiny.angry.kitten.homeapplication.data
 
+import android.util.Log
 import io.netty.handler.codec.mqtt.MqttQoS
 import io.vertx.core.buffer.Buffer
 import io.vertx.mqtt.MqttClient
@@ -26,12 +27,17 @@ object ActionConfigs : KoinComponent {
         else -> ActionConfig()
     }
 
-    fun publishMessage(topic : String, message: String) =
-        client.publish(
-            topic,
-            Buffer.buffer(message),
-            MqttQoS.EXACTLY_ONCE,
-            false,
-            false
-        )
+    fun publishMessage(topic : String, message: String) {
+        try {
+            client.publish(
+                topic,
+                Buffer.buffer(message),
+                MqttQoS.EXACTLY_ONCE,
+                false,
+                false
+            )
+        } catch (e: Exception) {
+            Log.e("Error", e.message)
+        }
+    }
 }
