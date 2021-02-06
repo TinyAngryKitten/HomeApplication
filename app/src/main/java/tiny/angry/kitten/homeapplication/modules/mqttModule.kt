@@ -1,10 +1,4 @@
 package tiny.angry.kitten.homeapplication.modules
-
-import android.Manifest
-import android.bluetooth.BluetoothAdapter
-import android.provider.Settings
-import android.util.Log
-import androidx.core.app.ActivityCompat.requestPermissions
 import com.fasterxml.jackson.databind.ObjectMapper
 import com.fasterxml.jackson.module.kotlin.KotlinModule
 import com.google.firebase.crashlytics.FirebaseCrashlytics
