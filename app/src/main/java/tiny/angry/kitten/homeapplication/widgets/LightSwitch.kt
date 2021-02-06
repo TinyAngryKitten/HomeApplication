@@ -51,8 +51,8 @@ class LightSwitch(context: Context, attributes : AttributeSet) : LinearLayout(co
                     val previousBrightness = switch1.progress
                     switch1.progress = newBrightness
 
-                    if(previousBrightness == 0 && newBrightness > 0) imageView.setImageResource(R.mipmap.light_on_icon_foreground)
-                    else if(previousBrightness > 0 && newBrightness == 0) imageView.setImageResource(R.mipmap.light_off_icon_foreground)
+                    if(newBrightness > 0) imageView.setImageResource(R.mipmap.light_on_icon_foreground)
+                    else if(newBrightness == 0) imageView.setImageResource(R.mipmap.light_off_icon_foreground)
                 }
             }
         }

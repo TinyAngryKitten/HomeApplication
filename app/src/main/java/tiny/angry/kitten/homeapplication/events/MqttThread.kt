@@ -5,6 +5,8 @@ import android.content.Intent
 import android.os.IBinder
 import android.util.Log
 import com.google.firebase.crashlytics.FirebaseCrashlytics
+import io.netty.handler.codec.mqtt.MqttQoS
+import io.vertx.core.buffer.Buffer
 import io.vertx.mqtt.MqttClient
 import io.vertx.mqtt.messages.MqttPublishMessage
 import kotlinx.coroutines.*
@@ -41,6 +43,7 @@ class MqttThread : Service(), KoinComponent{
 
                             client.publishHandler(::handleMessages)
                             subscribeToHandlerTopics()
+                            fetchCurrentLightStates()
                         }
                     }
 
@@ -58,6 +61,16 @@ class MqttThread : Service(), KoinComponent{
             handlers.forEach {
                 if(it.canHandle(message)) it.handle(message)
             }
+
+    fun fetchCurrentLightStates() {
+        client.publish(
+            "light/group/+/update",
+            Buffer.buffer(""),
+            MqttQoS.AT_MOST_ONCE,
+            false,
+            false
+        )
+    }
 
     fun subscribeToHandlerTopics() {
         Log.i("MQTT", "subscribing to topics")
