@@ -46,7 +46,7 @@ val mqttModule = module {
         ObjectMapper().registerModule(KotlinModule())
     }
 
-    single(named("host")) {"10.0.0.96"}
+    single(named("host")) {"192.168.50.3"}
     single(named("port")) {1883}
 
     single { PCStatsViewModel() }
